@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/faq.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="menu-bar">
+                <h1>ChatWPT</h1>
+
+
+
+                <ul class="down">
+
+                    <a href="deneme.html">
+
+                      <li><i class="fa-solid fa-house"> </i>Dashboard</li>
+                    </a>
+                    <a href="grid.html">
+                      <li class="flexcircle">
+                        <i class="fa-solid fa-star"> </i>Buy Premium<div class="circle">PRO</div>
+                    </li>
+                    </a>
+                  
+
+                    <a href="faq.html"><li class="active2"><i class="fa-solid fa-question "></i> FAQ </li></a>
+                    <a href="tableHistoryl.html"><li ><i class="fa-sharp fa-solid fa-gear"></i>Setting</li></a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right">
+          <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+          <div class="div-header">
+            <h1>FAQ</h1>
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, vel dolores? Molestias cum hic repellat praesentium, dignissimos eos porro eligendi.</span>
+          </div>
+          <div class="accordion-wrapper">
+            <div class="accordion">
+              <input type="radio" name="radio-a" id="check1" checked>
+              <label class="accordion-label" for="check1">Accordion 1</label>
+              <div class="accordion-content">
+                <p>Hey there, you are watching codiesbugs &#128522;</p>
+              </div>
+            </div>
+            <div class="accordion">
+              <input type="radio" name="radio-a" id="check2">
+              <label class="accordion-label" for="check2">Accordion 2</label>
+              <div class="accordion-content">
+                <p>I hope you are enjoing the video, don't forget to give your feedback in comment section</p>
+              </div>
+            </div>
+            <div class="accordion">
+              <input type="radio" name="radio-a" id="check3">
+              <label class="accordion-label" for="check3">Accordion 3</label>
+              <div class="accordion-content">
+                <p>If you liked then don't forget to subscribe the channel for latest videos. </p>
+              </div>
+            </div>
+            <div class="accordion">
+                <input type="radio" name="radio-a" id="check4">
+                <label class="accordion-label" for="check4">Accordion 3</label>
+                <div class="accordion-content">
+                  <p>If you liked then don't forget to subscribe the channel for latest videos. </p>
+                </div>
+              </div>         <div class="accordion">
+                <input type="radio" name="radio-a" id="check5">
+                <label class="accordion-label" for="check5">Accordion 3</label>
+                <div class="accordion-content">
+                  <p>If you liked then don't forget to subscribe the channel for latest videos. </p>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    <script>
+      let isMenuOpen = false, mq
+      document.querySelectorAll('.collapsed-menu > li').forEach(el => {
+          el.addEventListener('click', event => {
+              document.querySelector('.right > .text-container').innerHTML = event.target.innerHTML
+              if (window.matchMedia) {
+                  mq = window.matchMedia('(min-width: 640px)')
+                  onMediaChange(mq)
+              }
+          })
+      })
+      document.querySelector('.menu-toggle').addEventListener('click', () => {
+          if (!isMenuOpen) {
+              openMenu()
+          } else {
+              closeMenu()
+          }
+      })
+      function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+      if (window.matchMedia) {
+          mq = window.matchMedia('(min-width: 640px)')
+          mq.addListener(onMediaChange)
+      }
+
+      function closeMenu() {
+          document.querySelector('.container').style.transform = 'translateX(-300px)'
+          isMenuOpen = false
+      }
+
+      function openMenu() {
+          document.querySelector('.container').style.transform = 'translateX(0)'
+          isMenuOpen = true
+      }
+
+      function onMediaChange(mq) {
+          if (mq.matches) {
+              document.querySelector('.container').style.transform = 'translateX(0)'
+          } else {
+              closeMenu()
+          }
+      }
+
+  </script>
+</body>
+</html>

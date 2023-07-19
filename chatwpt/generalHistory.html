@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/generalcss.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="menu-bar">
+                <h1>ChatWPT</h1>
+                <div class="tableSidebar">
+                    <a class="active" href="generalHistory.html">General</a>
+                    <a  href="tableHistoryl.html">History</a>
+
+                </div>
+
+                <ul class="down">
+
+                    <a href="deneme.html">
+
+                      <li><i class="fa-solid fa-house"> </i>Dashboard</li>
+                    </a>
+                    <a href="grid.html">
+                      <li class="flexcircle">
+                        <i class="fa-solid fa-star"> </i>Buy Premium<div class="circle">PRO</div>
+                    </li>
+                    </a>
+                  
+
+                    <a href="faq.html"><li ><i class="fa-solid fa-question "></i> FAQ </li></a>
+                    <a href="tableHistoryl.html"><li class="active2"><i class="fa-sharp fa-solid fa-gear"></i>Setting</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="header">
+                <h1>General Settings</h1>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quam!</span>
+            </div>
+           <div class="content">
+                <div class="content1">
+                    <div class="content1-1">
+                        <h3>Üyelik Tipi</h3>
+                        <h2>Free</h3>
+                    </div>
+                    <div class="content1-2">
+                        <h3>Kullanım Limiti</h3>
+                        <h2>3/5</h3>
+                    </div>
+                    <div class="content1-3">
+                        <h3>Sistem Durumu</h3>
+                        <h2><i class="fa-solid fa-circle fa-2xs"style="color: #4dff00;"></i>Aktif</h3>
+                    </div>
+                </div>
+                <div class="content2">
+                    <div class="content2-1">
+                        <h3>Üyelik Tipi</h3>
+                        <h2>Premium</h3>
+                    </div>
+                    <div class="content2-2">
+                        <h3>Kullanım Limiti</h3>
+                        <h2>Sınırsız</h3>
+                    </div>
+                    <div class="content2-3">
+                        <h3>Sistem Durumu</h3>
+                        <h2><i class="fa-solid fa-circle fa-2xs"style="color: #4dff00;"></i>Aktif</h3>
+                    </div>
+                    <div class="content2-3">
+                        <h3>Lisans Anahtarı</h3>
+                        <h2 class="anahtar">SHFTJWK423KS</h3>
+                    </div>
+                    <div class="content2-3">
+                        <h3>Kalan Süre</h3>
+                        <h2>36 Gün</h3>
+                    </div>
+                </div>
+                </div>
+           </div>
+        </div>
+    </div>
+    <script>
+        let isMenuOpen = false, mq
+        document.querySelectorAll('.collapsed-menu > li').forEach(el => {
+            el.addEventListener('click', event => {
+                document.querySelector('.right > .text-container').innerHTML = event.target.innerHTML
+                if (window.matchMedia) {
+                    mq = window.matchMedia('(min-width: 640px)')
+                    onMediaChange(mq)
+                }
+            })
+        })
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            if (!isMenuOpen) {
+                openMenu()
+            } else {
+                closeMenu()
+            }
+        })
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+          }
+        if (window.matchMedia) {
+            mq = window.matchMedia('(min-width: 640px)')
+            mq.addListener(onMediaChange)
+        }
+  
+        function closeMenu() {
+            document.querySelector('.container').style.transform = 'translateX(-300px)'
+            isMenuOpen = false
+        }
+  
+        function openMenu() {
+            document.querySelector('.container').style.transform = 'translateX(0)'
+            isMenuOpen = true
+        }
+  
+        function onMediaChange(mq) {
+            if (mq.matches) {
+                document.querySelector('.container').style.transform = 'translateX(0)'
+            } else {
+                closeMenu()
+            }
+        }
+  
+    </script>
+</body>
+</html>
